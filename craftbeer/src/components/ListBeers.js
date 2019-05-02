@@ -26,12 +26,14 @@ export class ListBeers extends Component {
             this.state.beers.map(beer => {
               return (
                 <li key={beer._id} className='beer-list'>
-                  <img src={beer.image_url} alt={beer.name} />
-                  <div className="info">
-                    <h2>{beer.name}</h2>
-                    <h4>{beer.tagline}</h4>
-                    <span>Created by: {beer.contributed_by}</span>
-                  </div>
+                  <Link to={`/ListBeers/${beer._id}`}>
+                    <img src={beer.image_url} alt={beer.name} />
+                    <div className="info">
+                      <h2>{beer.name}</h2>
+                      <h4>{beer.tagline}</h4>
+                      <span>Created by: {beer.contributed_by}</span>
+                    </div>
+                  </Link>
                 </li>
               )
             })
